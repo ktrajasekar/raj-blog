@@ -25,7 +25,13 @@ export default function Blog() {
   return (
     <div>
       <div className="blog-post-container">
-        {post && post.map((item) => <div>{item.title}</div>)}
+        {post &&
+          post.map((item, key) => (
+            <div key={key}>
+              <div>{item.title}</div>
+              <div>{item.description}</div>
+            </div>
+          ))}
       </div>
     </div>
   );
