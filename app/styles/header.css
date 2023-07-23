@@ -1,3 +1,21 @@
 .header-bg {
-    background-color: var(--brand-color);
+  background-color: var(--brand-color);
+  padding: 20px 0;
+}
+
+.site-header h2 {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+.site-navigation ul {
+    list-style-type: none;
+    text-align: right;
+}
+.site-navigation ul li {
+    display: inline-block;
+    padding: 0 20px;
+}
+.site-navigation ul a{
+  font-weight: 600;
 }

@@ -3,3 +3,12 @@
   --text-color: #353535;
   --white: #fff;
 }
+
+html {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
