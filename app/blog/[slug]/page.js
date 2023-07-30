@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page({ params }) {
   const posts = [
     {
@@ -18,9 +20,11 @@ export default function Page({ params }) {
   const post = posts.find((post) => post.slug === params.slug);
   return (
     <>
-      <div>My Post: {params.slug}</div>
-      {post.title}
-      {<pre>{JSON.stringify(post, null, 2)}</pre>}
+      <Link href={`/blog/`}>BACK</Link>
+      <div>
+        <h1> {post.title}</h1>
+        <p>{post.content}</p>
+      </div>
     </>
   );
 }
