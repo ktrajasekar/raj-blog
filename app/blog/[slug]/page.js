@@ -1,7 +1,5 @@
-import Link from "next/link";
-
-export default function Blog() {
-  const post = [
+export default function Page({ params }) {
+  const posts = [
     {
       id: 1,
       title: "Getting Started with Next.js",
@@ -17,18 +15,12 @@ export default function Blog() {
       slug: "building-dynamic-websites-with-next-js-api-routes",
     },
   ];
-
+  const post = posts.find((post) => post.slug === params.slug);
   return (
-    <div>
-      <div className="blog-post-container">
-        {post &&
-          post.map((item, key) => (
-            <div key={key}>
-              <div>{item.description}</div>
-              <Link href={`/blog/${item.slug}`}>{item.title}</Link>
-            </div>
-          ))}
-      </div>
-    </div>
+    <>
+      <div>My Post: {params.slug}</div>
+      {post.title}
+      {<pre>{JSON.stringify(post, null, 2)}</pre>}
+    </>
   );
 }
